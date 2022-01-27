@@ -9,23 +9,20 @@ write-ghc-environment-files: never
 tests: true
 benchmarks: true
 
-source-repository-package
-  type: git
-  location: https://github.com/input-output-hk/plutus.git
-  subdir:
-    freer-extras
-    playground-common
-    plutus-chain-index
-    plutus-core
-    plutus-contract
-    plutus-ledger
-    plutus-ledger-api
-    plutus-tx
-    plutus-tx-plugin
-    prettyprinter-configurable
-    quickcheck-dynamic
-    word-array
-  tag: 8f1a47674a99ac9bc2aba3231375d8d6de0641d2
+-- nix-prefetch-url --unpack https://github.com/input-output-hk/plutus/tarball/8f1a47674a99ac9bc2aba3231375d8d6de0641d2 1vg5iixdnckv7jwlw6d45ccyvdhynjzrnkf580g6m1bska467s9x
+packages:
+  /nix/store/asbripz40difjz9k16wcv0c5kh255rds-8f1a47674a99ac9bc2aba3231375d8d6de0641d2/freer-extras
+  /nix/store/asbripz40difjz9k16wcv0c5kh255rds-8f1a47674a99ac9bc2aba3231375d8d6de0641d2/playground-common
+  /nix/store/asbripz40difjz9k16wcv0c5kh255rds-8f1a47674a99ac9bc2aba3231375d8d6de0641d2/plutus-chain-index
+  /nix/store/asbripz40difjz9k16wcv0c5kh255rds-8f1a47674a99ac9bc2aba3231375d8d6de0641d2/plutus-core
+  /nix/store/asbripz40difjz9k16wcv0c5kh255rds-8f1a47674a99ac9bc2aba3231375d8d6de0641d2/plutus-contract
+  /nix/store/asbripz40difjz9k16wcv0c5kh255rds-8f1a47674a99ac9bc2aba3231375d8d6de0641d2/plutus-ledger
+  /nix/store/asbripz40difjz9k16wcv0c5kh255rds-8f1a47674a99ac9bc2aba3231375d8d6de0641d2/plutus-ledger-api
+  /nix/store/asbripz40difjz9k16wcv0c5kh255rds-8f1a47674a99ac9bc2aba3231375d8d6de0641d2/plutus-tx
+  /nix/store/asbripz40difjz9k16wcv0c5kh255rds-8f1a47674a99ac9bc2aba3231375d8d6de0641d2/plutus-tx-plugin
+  /nix/store/asbripz40difjz9k16wcv0c5kh255rds-8f1a47674a99ac9bc2aba3231375d8d6de0641d2/prettyprinter-configurable
+  /nix/store/asbripz40difjz9k16wcv0c5kh255rds-8f1a47674a99ac9bc2aba3231375d8d6de0641d2/quickcheck-dynamic
+  /nix/store/asbripz40difjz9k16wcv0c5kh255rds-8f1a47674a99ac9bc2aba3231375d8d6de0641d2/word-array
 
 -- The following sections are copied from the 'plutus' repository cabal.project at the revision
 -- given above.
@@ -67,127 +64,89 @@ constraints:
 extra-packages: ieee, filemanip
 
 -- Drops an instance breaking our code. Should be released to Hackage eventually.
-source-repository-package
-  type: git
-  location: https://github.com/Quid2/flat.git
-  tag: 95e5d7488451e43062ca84d5376b3adcc465f1cd
+-- nix-prefetch-url --unpack https://github.com/Quid2/flat/tarball/95e5d7488451e43062ca84d5376b3adcc465f1cd 06l31x3y93rjpryvlxnpsyq2zyxvb0z6lik6yq2fvh36i5zwvwa3
+packages: /nix/store/56rdcgamc996mwpkq1ibcd0xajxvcaj1-95e5d7488451e43062ca84d5376b3adcc465f1cd
 
 -- Needs some patches, but upstream seems to be fairly dead (no activity in > 1 year)
-source-repository-package
-  type: git
-  location: https://github.com/shmish111/purescript-bridge.git
-  tag: 6a92d7853ea514be8b70bab5e72077bf5a510596
+-- nix-prefetch-url --unpack https://github.com/shmish111/purescript-bridge/tarball/6a92d7853ea514be8b70bab5e72077bf5a510596 13j64vv116in3c204qsl1v0ajphac9fqvsjp7x3zzfr7n7g61drb
+packages: /nix/store/afxgs339fmf61ywsckxdqw7a5dsid3sb-6a92d7853ea514be8b70bab5e72077bf5a510596
 
-source-repository-package
-  type: git
-  location: https://github.com/shmish111/servant-purescript.git
-  tag: a76104490499aa72d40c2790d10e9383e0dbde63
+-- nix-prefetch-url --unpack https://github.com/shmish111/servant-purescript/tarball/a76104490499aa72d40c2790d10e9383e0dbde63 11nxxmi5bw66va7psvrgrw7b7n85fvqgfp58yva99w3v9q3a50v9
+packages: /nix/store/ai7h752zr52xz4bvc5waxf2zj20xhk57-a76104490499aa72d40c2790d10e9383e0dbde63
 
-source-repository-package
-  type: git
-  location: https://github.com/input-output-hk/cardano-crypto.git
-  tag: ce8f1934e4b6252084710975bd9bbc0a4648ece4
+-- nix-prefetch-url --unpack https://github.com/input-output-hk/cardano-crypto/tarball/ce8f1934e4b6252084710975bd9bbc0a4648ece4 1v2laq04piyj511b2m77hxjh9l1yd6k9kc7g6bjala4w3zdwa4ni
+packages: /nix/store/92l3cgi74g0n0zdyh35d6m3366rig57z-ce8f1934e4b6252084710975bd9bbc0a4648ece4
 
-source-repository-package
-  type: git
-  location: https://github.com/input-output-hk/cardano-base
-  tag: a715c7f420770b70bbe95ca51d3dec83866cb1bd
-  subdir:
-    binary
-    binary/test
-    slotting
-    cardano-crypto-class
-    cardano-crypto-praos
-    cardano-crypto-tests
-    strict-containers
+-- nix-prefetch-url --unpack https://github.com/input-output-hk/cardano-base/tarball/a715c7f420770b70bbe95ca51d3dec83866cb1bd 06l06mmb8cd4q37bnvfpgx1c5zgsl4xaf106dqva98738i8asj7j
+packages: /nix/store/fa47d5vbcysss4hr215aq5j8fvv4683y-a715c7f420770b70bbe95ca51d3dec83866cb1bd/binary
+packages: /nix/store/fa47d5vbcysss4hr215aq5j8fvv4683y-a715c7f420770b70bbe95ca51d3dec83866cb1bd/binary/test
+packages: /nix/store/fa47d5vbcysss4hr215aq5j8fvv4683y-a715c7f420770b70bbe95ca51d3dec83866cb1bd/slotting
+packages: /nix/store/fa47d5vbcysss4hr215aq5j8fvv4683y-a715c7f420770b70bbe95ca51d3dec83866cb1bd/cardano-crypto-class
+packages: /nix/store/fa47d5vbcysss4hr215aq5j8fvv4683y-a715c7f420770b70bbe95ca51d3dec83866cb1bd/cardano-crypto-praos
+packages: /nix/store/fa47d5vbcysss4hr215aq5j8fvv4683y-a715c7f420770b70bbe95ca51d3dec83866cb1bd/cardano-crypto-tests
+packages: /nix/store/fa47d5vbcysss4hr215aq5j8fvv4683y-a715c7f420770b70bbe95ca51d3dec83866cb1bd/strict-containers
 
-source-repository-package
-  type: git
-  location: https://github.com/input-output-hk/cardano-prelude
-  tag: fd773f7a58412131512b9f694ab95653ac430852
-  subdir:
-    cardano-prelude
-    cardano-prelude-test
+-- nix-prefetch-url --unpack https://github.com/input-output-hk/cardano-prelude/tarball/fd773f7a58412131512b9f694ab95653ac430852 02jddik1yw0222wd6q0vv10f7y8rdgrlqaiy83ph002f9kjx7mh6
+packages: /nix/store/9i1bvqzjsvmpmamxxycp9p3w5cc1g0fr-fd773f7a58412131512b9f694ab95653ac430852/cardano-prelude
+packages: /nix/store/9i1bvqzjsvmpmamxxycp9p3w5cc1g0fr-fd773f7a58412131512b9f694ab95653ac430852/cardano-prelude-test
 
-source-repository-package
-  type: git
-  location: https://github.com/input-output-hk/ouroboros-network
-  tag: e338f2cf8e1078fbda9555dd2b169c6737ef6774
-  subdir:
-    monoidal-synchronisation
-    typed-protocols
-    typed-protocols-examples
-    ouroboros-network
-    ouroboros-network-testing
-    ouroboros-network-framework
-    ouroboros-consensus
-    ouroboros-consensus-byron
-    ouroboros-consensus-cardano
-    ouroboros-consensus-shelley
-    io-sim
-    io-classes
-    network-mux
+-- nix-prefetch-url --unpack https://github.com/input-output-hk/ouroboros-network/tarball/e338f2cf8e1078fbda9555dd2b169c6737ef6774 i12x81hpjyw2cpkazfalz6bw2wgr6ax7bnmlxl2rlfakkvsjfgaqd
+packages: /nix/store/8iphlir167apdw8p560qyagygqnbrz2k-e338f2cf8e1078fbda9555dd2b169c6737ef6774/monoidal-synchronisation
+packages: /nix/store/8iphlir167apdw8p560qyagygqnbrz2k-e338f2cf8e1078fbda9555dd2b169c6737ef6774/typed-protocols
+packages: /nix/store/8iphlir167apdw8p560qyagygqnbrz2k-e338f2cf8e1078fbda9555dd2b169c6737ef6774/typed-protocols-examples
+packages: /nix/store/8iphlir167apdw8p560qyagygqnbrz2k-e338f2cf8e1078fbda9555dd2b169c6737ef6774/ouroboros-network
+packages: /nix/store/8iphlir167apdw8p560qyagygqnbrz2k-e338f2cf8e1078fbda9555dd2b169c6737ef6774/ouroboros-network-testing
+packages: /nix/store/8iphlir167apdw8p560qyagygqnbrz2k-e338f2cf8e1078fbda9555dd2b169c6737ef6774/ouroboros-network-framework
+packages: /nix/store/8iphlir167apdw8p560qyagygqnbrz2k-e338f2cf8e1078fbda9555dd2b169c6737ef6774/ouroboros-consensus
+packages: /nix/store/8iphlir167apdw8p560qyagygqnbrz2k-e338f2cf8e1078fbda9555dd2b169c6737ef6774/ouroboros-consensus-byron
+packages: /nix/store/8iphlir167apdw8p560qyagygqnbrz2k-e338f2cf8e1078fbda9555dd2b169c6737ef6774/ouroboros-consensus-cardano
+packages: /nix/store/8iphlir167apdw8p560qyagygqnbrz2k-e338f2cf8e1078fbda9555dd2b169c6737ef6774/ouroboros-consensus-shelley
+packages: /nix/store/8iphlir167apdw8p560qyagygqnbrz2k-e338f2cf8e1078fbda9555dd2b169c6737ef6774/io-sim
+packages: /nix/store/8iphlir167apdw8p560qyagygqnbrz2k-e338f2cf8e1078fbda9555dd2b169c6737ef6774/io-classes
+packages: /nix/store/8iphlir167apdw8p560qyagygqnbrz2k-e338f2cf8e1078fbda9555dd2b169c6737ef6774/network-mux
 
-source-repository-package
-  type: git
-  location: https://github.com/input-output-hk/iohk-monitoring-framework
-  tag: 34abfb7f4f5610cabb45396e0496472446a0b2ca
-  subdir:
-    iohk-monitoring
-    tracer-transformers
-    contra-tracer
-    plugins/backend-aggregation
-    plugins/backend-ekg
-    plugins/backend-monitoring
-    plugins/backend-trace-forwarder
-    plugins/scribe-systemd
+-- nix-prefetch-url --unpack https://github.com/input-output-hk/iohk-monitoring-framework/tarball/34abfb7f4f5610cabb45396e0496472446a0b2ca 1fdc0a02ipa385dnwa6r6jyc8jlg537i12hflfglkhjs2b7i92gs
+packages: /nix/store/cwm91w66k51ihccnx8mp5njn3a5bbd9p-34abfb7f4f5610cabb45396e0496472446a0b2ca/iohk-monitoring
+packages: /nix/store/cwm91w66k51ihccnx8mp5njn3a5bbd9p-34abfb7f4f5610cabb45396e0496472446a0b2ca/tracer-transformers
+packages: /nix/store/cwm91w66k51ihccnx8mp5njn3a5bbd9p-34abfb7f4f5610cabb45396e0496472446a0b2ca/contra-tracer
+packages: /nix/store/cwm91w66k51ihccnx8mp5njn3a5bbd9p-34abfb7f4f5610cabb45396e0496472446a0b2ca/plugins/backend-aggregation
+packages: /nix/store/cwm91w66k51ihccnx8mp5njn3a5bbd9p-34abfb7f4f5610cabb45396e0496472446a0b2ca/plugins/backend-ekg
+packages: /nix/store/cwm91w66k51ihccnx8mp5njn3a5bbd9p-34abfb7f4f5610cabb45396e0496472446a0b2ca/plugins/backend-monitoring
+packages: /nix/store/cwm91w66k51ihccnx8mp5njn3a5bbd9p-34abfb7f4f5610cabb45396e0496472446a0b2ca/plugins/backend-trace-forwarder
+packages: /nix/store/cwm91w66k51ihccnx8mp5njn3a5bbd9p-34abfb7f4f5610cabb45396e0496472446a0b2ca/plugins/scribe-systemd
 
-source-repository-package
-  type: git
-  location: https://github.com/input-output-hk/cardano-ledger-specs
-  tag: 6b0fca7a73c317f3af7c14dd4dc38178cc78a6c8
-  subdir:
-    byron/chain/executable-spec
-    byron/crypto
-    byron/crypto/test
-    byron/ledger/executable-spec
-    byron/ledger/impl
-    byron/ledger/impl/test
-    semantics/executable-spec
-    semantics/small-steps-test
-    shelley/chain-and-ledger/dependencies/non-integer
-    shelley/chain-and-ledger/executable-spec
-    shelley/chain-and-ledger/shelley-spec-ledger-test
-    shelley-ma/impl
-    cardano-ledger-core
-    alonzo/impl
+-- nix-prefetch-url --unpack https://github.com/input-output-hk/cardano-ledger-specs/tarball/6b0fca7a73c317f3af7c14dd4dc38178cc78a6c8 0570g723ac8wf0zha37nsh4n0809rqqfx4j9i80hqkq18cysrglr
+packages: /nix/store/a0vgpkq29qfzzblm85n7kc0q20grs48r-6b0fca7a73c317f3af7c14dd4dc38178cc78a6c8/byron/chain/executable-spec
+packages: /nix/store/a0vgpkq29qfzzblm85n7kc0q20grs48r-6b0fca7a73c317f3af7c14dd4dc38178cc78a6c8/byron/crypto
+packages: /nix/store/a0vgpkq29qfzzblm85n7kc0q20grs48r-6b0fca7a73c317f3af7c14dd4dc38178cc78a6c8/byron/crypto/test
+packages: /nix/store/a0vgpkq29qfzzblm85n7kc0q20grs48r-6b0fca7a73c317f3af7c14dd4dc38178cc78a6c8/byron/ledger/executable-spec
+packages: /nix/store/a0vgpkq29qfzzblm85n7kc0q20grs48r-6b0fca7a73c317f3af7c14dd4dc38178cc78a6c8/byron/ledger/impl
+packages: /nix/store/a0vgpkq29qfzzblm85n7kc0q20grs48r-6b0fca7a73c317f3af7c14dd4dc38178cc78a6c8/byron/ledger/impl/test
+packages: /nix/store/a0vgpkq29qfzzblm85n7kc0q20grs48r-6b0fca7a73c317f3af7c14dd4dc38178cc78a6c8/semantics/executable-spec
+packages: /nix/store/a0vgpkq29qfzzblm85n7kc0q20grs48r-6b0fca7a73c317f3af7c14dd4dc38178cc78a6c8/semantics/small-steps-test
+packages: /nix/store/a0vgpkq29qfzzblm85n7kc0q20grs48r-6b0fca7a73c317f3af7c14dd4dc38178cc78a6c8/shelley/chain-and-ledger/dependencies/non-integer
+packages: /nix/store/a0vgpkq29qfzzblm85n7kc0q20grs48r-6b0fca7a73c317f3af7c14dd4dc38178cc78a6c8/shelley/chain-and-ledger/executable-spec
+packages: /nix/store/a0vgpkq29qfzzblm85n7kc0q20grs48r-6b0fca7a73c317f3af7c14dd4dc38178cc78a6c8/shelley/chain-and-ledger/shelley-spec-ledger-test
+packages: /nix/store/a0vgpkq29qfzzblm85n7kc0q20grs48r-6b0fca7a73c317f3af7c14dd4dc38178cc78a6c8/shelley-ma/impl
+packages: /nix/store/a0vgpkq29qfzzblm85n7kc0q20grs48r-6b0fca7a73c317f3af7c14dd4dc38178cc78a6c8/cardano-ledger-core
+packages: /nix/store/a0vgpkq29qfzzblm85n7kc0q20grs48r-6b0fca7a73c317f3af7c14dd4dc38178cc78a6c8/alonzo/impl
 
 -- A lot of plutus dependencies have to be synchronized with the dependencies of
 -- cardano-node. If you update cardano-node, please make sure that all dependencies
 -- of cardano-node are also updated.
-source-repository-package
-  type: git
-  location: https://github.com/input-output-hk/cardano-node.git
-  tag: f3ef4ed72894499160f2330b91572a159005c148
-  subdir:
-    cardano-api
-    cardano-node
-    cardano-cli
-    cardano-config
+-- nix-prefetch-url --unpack https://github.com/input-output-hk/cardano-node/tarball/f3ef4ed72894499160f2330b91572a159005c148 1mp8ih6kmq4j354mgjgrxlssv7jbk5zz1j3nyqg43ascql4d0fvq
+packages: /nix/store/lyrsl5g7i1hq7zsva7afnvz1wn2dqv8s-f3ef4ed72894499160f2330b91572a159005c148/cardano-api
+packages: /nix/store/lyrsl5g7i1hq7zsva7afnvz1wn2dqv8s-f3ef4ed72894499160f2330b91572a159005c148/cardano-node
+packages: /nix/store/lyrsl5g7i1hq7zsva7afnvz1wn2dqv8s-f3ef4ed72894499160f2330b91572a159005c148/cardano-cli
+packages: /nix/store/lyrsl5g7i1hq7zsva7afnvz1wn2dqv8s-f3ef4ed72894499160f2330b91572a159005c148/cardano-config
 
-source-repository-package
-  type: git
-  location: https://github.com/input-output-hk/Win32-network
-  tag: 94153b676617f8f33abe8d8182c37377d2784bd1
+-- nix-prefetch-url --unpack https://github.com/input-output-hk/Win32-network/tarball/94153b676617f8f33abe8d8182c37377d2784bd1 0pb7bg0936fldaa5r08nqbxvi2g8pcy4w3c7kdcg7pdgmimr30ss
+packages: /nix/store/sinxjamwaiabd8d942304mhr4k8rdnq0-94153b676617f8f33abe8d8182c37377d2784bd1
 
-source-repository-package
-  type: git
-  location: https://github.com/input-output-hk/hedgehog-extras
-  tag: 8bcd3c9dc22cc44f9fcfe161f4638a384fc7a187
+-- nix-prefetch-url --unpack https://github.com/input-output-hk/hedgehog-extras/tarball/8bcd3c9dc22cc44f9fcfe161f4638a384fc7a187 12viwpahjdfvlqpnzdgjp40nw31rvyznnab1hml9afpaxd6ixh70
+packages: /nix/store/8n8r1bl78bzfmq5sr7jn7lglsz19xw2j-8bcd3c9dc22cc44f9fcfe161f4638a384fc7a187
 
 -- The following dependencies are not mirrored in the
 -- stack.yaml file, but they are needed regardless by cabal.
-source-repository-package
-  type: git
-  location: https://github.com/input-output-hk/goblins
-  tag: cde90a2b27f79187ca8310b6549331e59595e7ba
+-- nix-prefetch-url --unpack https://github.com/input-output-hk/goblins/tarball/cde90a2b27f79187ca8310b6549331e59595e7ba 17c88rbva3iw82yg9srlxjv2ia5wjb9cyqw44hik565f5v9svnyg
+packages: /nix/store/j6j8lrrw182766ahdxvcf0k31n2m3k9c-cde90a2b27f79187ca8310b6549331e59595e7ba

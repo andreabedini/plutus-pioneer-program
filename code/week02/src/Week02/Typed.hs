@@ -12,18 +12,42 @@
 
 module Week02.Typed where
 
-import           Control.Monad        hiding (fmap)
-import           Data.Map             as Map
+import Control.Monad ( Monad((>>), (>>=)), void )
+import Data.Map as Map ( toList )
 import           Data.Text            (Text)
 import           Data.Void            (Void)
-import           Plutus.Contract
+import Plutus.Contract
+    ( type (.\/),
+      Endpoint,
+      Contract,
+      AsContractError,
+      logInfo,
+      awaitTxConfirmed,
+      endpoint,
+      submitTxConstraints,
+      submitTxConstraintsWith,
+      utxoAt,
+      select )
 import           PlutusTx             (Data (..))
 import qualified PlutusTx
-import           PlutusTx.Prelude     hiding (Semigroup(..), unless)
-import           Ledger               hiding (singleton)
-import           Ledger.Constraints   as Constraints
+import PlutusTx.Prelude
+    ( Bool, Integer, (<$>), mconcat, ($), fst, traceIfFalse, Eq((==)) )
+import Ledger
+    ( Address,
+      ValidatorHash,
+      Validator,
+      ScriptContext,
+      scriptAddress,
+      txId,
+      Redeemer(Redeemer) )
+import Ledger.Constraints as Constraints
+    ( otherScript,
+      unspentOutputs,
+      mustPayToTheScript,
+      mustSpendScriptOutput,
+      TxConstraints )
 import qualified Ledger.Typed.Scripts as Scripts
-import           Ledger.Ada           as Ada
+import Ledger.Ada as Ada ( lovelaceValueOf )
 import           Playground.Contract  (printJson, printSchemas, ensureKnownCurrencies, stage)
 import           Playground.TH        (mkKnownCurrencies, mkSchemaDefinitions)
 import           Playground.Types     (KnownCurrency (..))
